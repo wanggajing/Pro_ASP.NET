@@ -11,5 +11,9 @@ public partial class Chaptor12_CodeBuggets_StandardCodeNugget : System.Web.UI.Pa
     {
 
     }
-    
+    protected string GetCity()
+    {
+        string[] cities= { " < input id = password/> < button type = submit > Submit</button > " };
+        return cities[new Random().Next(cities.Length)];        
+    }
 }
