@@ -11,7 +11,7 @@
     <div>
         <asp:Repeater ID="Repeater1" runat="server" SelectMethod="GetCities" ItemType="System.String">
             <ItemTemplate>
-                <li><%#Item %></li>
+                <li><%#:Item %></li>
             </ItemTemplate>
         </asp:Repeater>
     </div>
