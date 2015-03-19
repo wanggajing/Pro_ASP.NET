@@ -9,8 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        I live in: <span id = "mySpan" runat = "server" > </span>
     </div>
+    <div > Today is: <%: GetDayOfWeek() %> </div>
     </form>
 </body>
 </html>
