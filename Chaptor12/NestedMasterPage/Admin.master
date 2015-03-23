@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Chaptor12/NestedMasterPage/Top.master" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Chaptor12_NestedMasterPage_Admin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type = "text/css">
+        h2.sectionTitle {
+        text-align: center;
+        border: medium solid black;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID = "pageHead" runat = "server" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="sectionHeader" Runat="Server">
+    <h2 class = "sectionTitle" > Administration</h2>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="mainContent" Runat="Server">
+    <asp:ContentPlaceHolder ID = "pageContent" runat = "server" />
+</asp:Content>
+
