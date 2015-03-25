@@ -14,10 +14,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <h2>Events</h2>
+        <h2><%: Application["message"] %></h2>
         <table id="eventTable">
             <tr><th>Source</th><th>Type</th></tr>
-            <asp:Repeater SelectMethod="GetEvents" ItemType="Events.EventDescription" runat="server">
+            <asp:Repeater SelectMethod="GetEvents" ItemType="EventDescription" runat="server">
                 <ItemTemplate>
                     <tr><td><%#: Item.Source %></td><td><%#: Item.Type %></td></tr>
                 </ItemTemplate>

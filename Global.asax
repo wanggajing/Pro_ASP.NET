@@ -5,13 +5,24 @@
     void Application_Start(object sender, EventArgs e) 
     {
         // Code that runs on application startup
-
+        EventCollection.Add(EventSource.Application, "Start");
+        Application["message"] = "Application Events";
     }
     
     void Application_End(object sender, EventArgs e) 
     {
         //  Code that runs on application shutdown
 
+    }
+    protected void Application_BeginRequest(object sender, EventArgs e)
+    {
+        EventCollection.Add(EventSource.Application, "BeginRequest");
+        Response.Write(string.Format("Request started at {0}",
+        DateTime.Now.ToLongTimeString()));
+    }
+    protected void Application_EndRequest(object sender, EventArgs e)
+    {
+        EventCollection.Add(EventSource.Application, "EndRequest");
     }
         
     void Application_Error(object sender, EventArgs e) 
