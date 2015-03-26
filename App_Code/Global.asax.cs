@@ -37,6 +37,8 @@ public class Global : System.Web.HttpApplication
 //        This works for the instances of the Global object that are instantiated to handle the request lifecycle, but not for
 //those instances created for the application lifecycle and we cause an HttpException when we call CreateTimeStamp
 //from the Application_Start method.
+        //Session property will return null until the PostAcquireRequestState application event has been triggered. 
+        //Session property in HttpApplication Returns the HttpContext.Session value, but throws an HttpException if the value is null.
         string stamp = Context.Timestamp.ToLongTimeString();
         if (Context.Session != null)
         {
