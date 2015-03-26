@@ -34,8 +34,11 @@ public class Global : System.Web.HttpApplication
     }
     protected void CreateTimeStamp()
     {
+//        This works for the instances of the Global object that are instantiated to handle the request lifecycle, but not for
+//those instances created for the application lifecycle and we cause an HttpException when we call CreateTimeStamp
+//from the Application_Start method.
         string stamp = Context.Timestamp.ToLongTimeString();
-        if (Session != null)
+        if (Context.Session != null)
         {
             Session["request_timestamp"] = stamp;
         }
