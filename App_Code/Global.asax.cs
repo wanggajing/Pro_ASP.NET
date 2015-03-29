@@ -18,7 +18,15 @@ public class Global : System.Web.HttpApplication
         {
             case RequestNotification.BeginRequest:
                 EventCollection.Add(EventSource.Application, "BeginRequest");
-                CreateTimeStamp();
+                if (Request.RawUrl == "/Time") 
+                {
+                    Response.Write(Context.Timestamp.ToLongTimeString());
+                    CompleteRequest();
+                }
+                break;
+            default:
+                string eventName = Context.CurrentNotification.ToString();
+                EventCollection.Add(EventSource.Application, eventName);
                 break;
         }
     }
